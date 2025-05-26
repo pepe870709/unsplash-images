@@ -1,6 +1,7 @@
 import { QueryClient, useQuery } from "@tanstack/react-query";
 import authFetch from "./Axios/Axios";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 
 export const useFetchData =  (params) => {
@@ -18,6 +19,7 @@ export const useFetchData =  (params) => {
 }
 
 
+//custom hook to fetch data using AbortController()
 export const useEffectData = (url,option={}) => {
 
     const [data2, setData2] = useState(null)
@@ -27,7 +29,7 @@ export const useEffectData = (url,option={}) => {
     
 
     useEffect(()=>{
-        const controller = new AbortController();
+        const controller = new AbortController(); //worth noting that using QueryReact, it takes care of abortion by itself
         const signal = controller.signal;
 
         const fetchDataTwo = async() => {
@@ -36,7 +38,7 @@ export const useEffectData = (url,option={}) => {
                 const response = await authFetch.get(url, {signal})
                 setData2(response.data)
             } catch (error) {
-                if(authFetch.isCancel(error)){
+                if(axios.isCancel(error)){ // this isCancel function checks if the error was a cancel request or a network problem
                     console.log('club')
                 }else{
                     setError(error)
@@ -56,3 +58,4 @@ export const useEffectData = (url,option={}) => {
 
     return {data2, error, loading}
 }
+

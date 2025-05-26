@@ -283,8 +283,6 @@ main {
   transition: var(--transitionDarkMode);
 }
 
-
-
 .main-wrapper-black {
   background-color: var(--black);
   min-height: 100vh; /* makes sure it covers full viewport height */

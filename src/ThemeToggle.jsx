@@ -7,7 +7,7 @@ const ThemeToggle = () => {
 
   return (
     <div className='toggle-container '>
-      <button className='toggle-icon' onClick={()=>{toggleChanger()}}>{toogleTrue?<FaMoon/>:<FaSun/>}</button>
+      <button className='toggle-icon' onClick={()=>{toggleChanger()}}>{toogleTrue?<p>M</p>:<p>S</p>}</button>
     </div>
   )
 }
