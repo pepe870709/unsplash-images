@@ -12,7 +12,6 @@ const Gallery = () => {
 
     const {data2, error, loading} = useEffectData(`/search/collections?per_page=20 &query=${topic}`)
 
-    console.log(data2)
 
 
   if (isError) {

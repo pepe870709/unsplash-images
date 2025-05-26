@@ -1,7 +1,5 @@
 import React from 'react'
 import { createContext, useContext, useState } from 'react'
-import { Stack } from './classes'
-
 
 const AppContext =  createContext()
 
@@ -9,24 +7,6 @@ const Context = ({children}) => {
 
 const [toogleTrue, setToggleTrue] = useState(false)
 const [topic, setTopic] = useState('')
-
-const pp = new Stack()
-const cc = new Stack()
-
-pp.push(45)
-pp.push(99)
-pp.push(78)
-pp.push(23)
-pp.push(11)
-pp.push(100)
-
-console.log(pp.All())
-
-console.log(cc.All())
-
-
-
-
 
 
 
