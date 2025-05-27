@@ -1,5 +1,6 @@
 import React from 'react'
-//import {FaMoon, FaSun} from 'react-icons/fa'
+import {FaMoon} from 'react-icons/fa'
+import {FaSun} from 'react-icons/fa'
 import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 import { useGlobalContext } from './Context'
 
@@ -8,7 +9,7 @@ const ThemeToggle = () => {
 
   return (
     <div className='toggle-container '>
-      <button className='toggle-icon' onClick={()=>{toggleChanger()}}>{toogleTrue?<BsFillMoonFill/>:<BsFillSunFill/>}</button>
+      <button className='toggle-icon' onClick={()=>{toggleChanger()}}>{toogleTrue?<FaMoon/>:<FaSun/>}</button>
     </div>
   )
 }
